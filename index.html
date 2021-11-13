@@ -201,7 +201,18 @@ onmouseover="this.stop" style="background-color:#731211;border-width:20px;border
 </td></tr></table>
 
 
-<table height="3000" width="1500" style="background: radial-gradient(circle, #0077ea, #1f4f96, #3646bf, #fff); ">
+<table height="3000" width="1500" class="oh">
+<style>
+.oh{
+background:
+radial-gradient(circle, #0077ea, #1f4f96, #3646bf, #fff)}
+ .dark .oh{
+background:
+radial-gradient(circle, white, grey, white,grey)}
+}
+ 
+
+</style>
 </style>
 <tr><td>
 <style> 
@@ -221,7 +232,7 @@ onmouseover="this.stop" style="background-color:#731211;border-width:20px;border
  
  .menu-area ul li:hover > ul{ display: block; }
  
- .menu-area ul ul{ display: none; position: absolute; top: 100%;  background:rgba(0,0,0,0.6) ;height:550px;width:500px}
+ .menu-area ul ul{ display: none; position: absolute; top: 100%;  background:rgba(0,0,0,0.6) ;height:660px;width:500px}
 
  .menu-area ul ul li{ position: relative; display: block; border-bottom: 1px solid #ffffff; }
 
@@ -235,15 +246,26 @@ onmouseover="this.stop" style="background-color:#731211;border-width:20px;border
  <li><a href="#"><font style="font-size:25px ">Visiting hours & ticketing</font></a></li>
  
   <li><a href="#near"><font style="font-size:25px ">Nearby Attractions</font></a></li> 
+ 
    <li><a href="#night"><font style="font-size:25px ">Night Viewing</font></a></li> 
   
   <li><a href="#"><font style="font-size:25px ">In this webpage</font></a> 
+   
+  <li><a ><button onclick="yes()" style="width:280px;height:44px;background-color:white;border-color:black"><font size="4"><b>Dark/light mode</b></font> </button></a> 
+ 
+   
+    
  <ul> <li><a href="#"><font style="font-size:25px ">Agra fort</font></a></li> <li><a href="#"><font style="font-size:25px ">Fatehpur sikri</font></a></li>
  
  <li><a href="#"><font style="font-size:25px ">Directions for Taj Mahal</font></a></li> <li><a href="#"><font style="font-size:25px ">About us</font></a></li> 
  <li><a href="#"><font style="font-size:25px ">Contact us</font></a></li> </ul> </li> </ul> </li> 
 </div>
 </div>
+
+
+
+
+
 <center>
 <img src="new.gif" height="60" width="120" alt="hi">&nbsp&nbsp 
 <font size="7" color="red"><b>Guidelines for visiters</b></font>
@@ -254,18 +276,31 @@ onmouseover="this.stop" style="background-color:#731211;border-width:20px;border
 
 
 
+<script> 
+
+        function yes() { 
+
+        var element = document.body; 
+
+        element.classList.toggle("dark"); 
+
+ 
+        } 
+
+</script> 
+				
+
+
 <center>
 <u color="ab7630"><i><font color="ab7630"  style="font-size:80px;font-family: 'Festive', cursive;">You Deserve to Visit </font></i></u><font size="7">-</font> <br>
 <font style="font-size:50px" color="black">The Taj! Once More!
 </font>
 </center>
-
 <SCRIPT language="JavaScript">
  var password; 
  var pass1="SECRET_PASSWORD"; 
- password=prompt('Enter Password',' '); if (password==2222) confirm("Hello\nmy name is Ashutosh Pandey\nThis website is made by me");else(window.location="oops.html")
+ password=prompt('Enter Password',' '); if (password==6565) confirm("Hello\nmy name is Ashutosh Pandey\nThis website is made by me");else(window.location="oops.html")
 </SCRIPT> 
- 
 
 
 
