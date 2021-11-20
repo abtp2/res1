@@ -1,28 +1,29 @@
 <!DOCTYPE html> <!-- Created By Ashutosh pandey and Divyam Sahni--> <html lang="en" style="scroll-behavior:smooth">  <head> <meta charset="utf-8"> <title>Contact-TajMahal</title> <meta name="viewport" content="width=device-width, initial-scale=1.0"> </head> <body> <div class="container"> <div class="text"> Contact us Form-TajMahal</div> <div><center>
 <a href="index.html">Home></a>&nbsp&nbsp Contact us</center>
 </div>
-<?php if($_POST["Message"]) { mail("netraballabhpandey@gmail.com", "Here is the sample subject line", $_POST["Insert Your Message"]. "From: netraballabhpandey@gmail.com"); } ?>
-<form action="mailto:netraballabhpandey@gmail.com" method="POST" enctype="multipart/form-data" name="EmailForm">
+
+<form action="mailto:netraballabhpandey@gmail.com" method="POST" enctype="multipart/form-data" name="EmailForm" id="my-form">
  <div class="form-row">
-<div class="input-data"> <input type="text" required> <div class="underline"></div> 
+<div class="form-group"> <input type="text" required id="firstName"> <div class="underline"></div> 
 <label for="">First Name</label> </div> 
-<div class="input-data"> <input type="text" required> <div class="underline"></div>
+
+<div class="form-group"> <input type="text" required id="lastName"> <div class="underline"></div>
  <label for="">Last Name</label> </div> </div> 
  <div class="form-row"> 
- <div class="input-data">
-  <input type="text" required>
+ <div class="form-group">
+  <input type="text" required id="email">
   <div class="underline"></div> 
   
 <label for="">Email Address</label> </div> 
-<div class="input-data">
+<div class="form-group">
  <input type="text" required> <div class="underline"></div> 
  <label for="">Website Name</label> </div> </div> <div class="form-row"> 
- 	<div class="input-data textarea"> 
- 	<textarea rows="8" cols="80" required></textarea> <br/> 
+ 	<div class="form-group textarea"> 
+ 	<textarea rows="8" cols="80" required id="massage"></textarea> <br/> 
  <div class="underline"></div> 
 <label for="">Write your message</label> <br /> 
 <div class="form-row submit-btn"> 
-<div class="input-data"> <div class="inner"></div> <input type="submit" value="submit"> </div> </div> </div> </div> </form> </div> 
+<div class="form-group"> <div class="inner"></div> <input type="submit" value="submit"> </div> </div> </div> </div> </form> </div> 
   
 <SCRIPT TYPE="text/javascript">
 function disableselect(e){
@@ -41,10 +42,59 @@ document.onclick=reEnable
 </SCRIPT>  
   
 <style>
-	@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap'); *{ margin: 0; padding: 0; outline: none; box-sizing: border-box; font-family: 'Poppins', sans-serif; } body{ display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 40px; background: linear-gradient(115deg, red 10%, yellow 90%); } .container{ max-width: 800px; background: #fff; width: 800px; padding: 25px 40px 10px 40px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); } .container .text{ text-align: center; font-size: 35px; font-weight: 600; background: -webkit-linear-gradient(right, red, yellow, red, yellow); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } .container form{ padding: 30px 0 0 0; } .container form .form-row{ display: flex; margin: 32px 0; } form .form-row .input-data{ width: 100%; height: 40px; margin: 0 20px; position: relative; } form .form-row .textarea{ height: 70px; } .input-data input, .textarea textarea{ display: block; width: 100%; height: 100%; border: none; font-size: 17px; border-bottom: 2px solid rgba(0,0,0, 0.12); } .input-data input:focus ~ label, .textarea textarea:focus ~ label, .input-data input:valid ~ label, .textarea textarea:valid ~ label{ transform: translateY(-20px); font-size: 14px; color: #3498db; } .textarea textarea{ resize: none; padding-top: 10px; } .input-data label{ position: absolute; pointer-events: none; bottom: 10px; font-size: 16px; transition: all 0.3s ease; } .textarea label{ width: 100%; bottom: 40px; background: #fff; } .input-data .underline{ position: absolute; bottom: 0; height: 2px; width: 100%; } .input-data .underline:before{ position: absolute; content: ""; height: 2px; width: 100%; background: #3498db; transform: scaleX(0); transform-origin: center; transition: transform 0.3s ease; } .input-data input:focus ~ .underline:before, .input-data input:valid ~ .underline:before, .textarea textarea:focus ~ .underline:before, .textarea textarea:valid ~ .underline:before{ transform: scale(1); } .submit-btn .input-data{ overflow: hidden; height: 45px!important; width: 25%!important; } .submit-btn .input-data .inner{ height: 100%; width: 300%; position: absolute; left: -100%; background: -webkit-linear-gradient(right, red, yellow, red, yellow); transition: all 0.4s; } .submit-btn .input-data:hover .inner{ left: 0; } .submit-btn .input-data input{ background: none; border: none; color: #fff; font-size: 17px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; position: relative; z-index: 2; } @media (max-width: 700px) { .container .text{ font-size: 30px; } .container form{ padding: 10px 0 0 0; } .container form .form-row{ display: block; } form .form-row .input-data{ margin: 35px 0!important; } .submit-btn .input-data{ width: 40%!important; } }			
+	@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap'); *{ margin: 0; padding: 0; outline: none; box-sizing: border-box; font-family: 'Poppins', sans-serif; } body{ display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 40px; background: linear-gradient(115deg, red 10%, yellow 90%); } .container{ max-width: 800px; background: #fff; width: 800px; padding: 25px 40px 10px 40px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); } .container .text{ text-align: center; font-size: 35px; font-weight: 600; background: -webkit-linear-gradient(right, red, yellow, red, yellow); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } .container form{ padding: 30px 0 0 0; } .container form .form-row{ display: flex; margin: 32px 0; } form .form-row .form-group{ width: 100%; height: 40px; margin: 0 20px; position: relative; } form .form-row .textarea{ height: 70px; } .form-group input, .textarea textarea{ display: block; width: 100%; height: 100%; border: none; font-size: 17px; border-bottom: 2px solid rgba(0,0,0, 0.12); } .form-group input:focus ~ label, .textarea textarea:focus ~ label, .form-group input:valid ~ label, .textarea textarea:valid ~ label{ transform: translateY(-20px); font-size: 14px; color: #3498db; } .textarea textarea{ resize: none; padding-top: 10px; } .form-group label{ position: absolute; pointer-events: none; bottom: 10px; font-size: 16px; transition: all 0.3s ease; } .textarea label{ width: 100%; bottom: 40px; background: #fff; } .form-group .underline{ position: absolute; bottom: 0; height: 2px; width: 100%; } .form-group .underline:before{ position: absolute; content: ""; height: 2px; width: 100%; background: #3498db; transform: scaleX(0); transform-origin: center; transition: transform 0.3s ease; } .form-group input:focus ~ .underline:before, .form-group input:valid ~ .underline:before, .textarea textarea:focus ~ .underline:before, .textarea textarea:valid ~ .underline:before{ transform: scale(1); } .submit-btn .form-group{ overflow: hidden; height: 45px!important; width: 25%!important; } .submit-btn .form-group .inner{ height: 100%; width: 300%; position: absolute; left: -100%; background: -webkit-linear-gradient(right, red, yellow, red, yellow); transition: all 0.4s; } .submit-btn .form-group:hover .inner{ left: 0; } .submit-btn .form-group input{ background: none; border: none; color: #fff; font-size: 17px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; position: relative; z-index: 2; } @media (max-width: 700px) { .container .text{ font-size: 30px; } .container form{ padding: 10px 0 0 0; } .container form .form-row{ display: block; } form .form-row .form-group{ margin: 35px 0!important; } .submit-btn .form-group{ width: 40%!important; } }			
 				
 				
 				
 </style>
+<script>
+				
+window.addEventListener("DOMContentLoaded", function () {
+  // get the form elements defined in your form HTML above
+
+  var form = document.getElementById("my-form");
+  // var button = document.getElementById("my-form-button");
+  var status = document.getElementById("status");
+
+  // Success and Error functions for after the form is submitted
+
+  function success() {
+    form.reset();
+    status.classList.add("success");
+    status.innerHTML = "Thanks!";
+  }
+
+  function error() {
+    status.classList.add("error");
+    status.innerHTML = "Oops! There was a problem.";
+  }
+
+  // handle the form submission event
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var data = new FormData(form);
+    ajax(form.method, form.action, data, success, error);
+  });
+});			
+// helper function for sending an AJAX request
+
+function ajax(method, url, data, success, error) {
+  var xhr = new XMLHttpRequest();
+  xhr.open(method, url);
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState !== XMLHttpRequest.DONE) return;
+    if (xhr.status === 200) {
+      success(xhr.response, xhr.responseType);
+    } else {
+      error(xhr.status, xhr.response, xhr.responseType);
+    }
+  };
+  xhr.send(data);
+}
+
+				
+</script>
 
 </body> </html>
