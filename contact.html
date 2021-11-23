@@ -1,39 +1,12 @@
+<?php include 'sentMail.php';?>
 <!DOCTYPE html> <!-- Created By Ashutosh pandey --> <html lang="en" style="scroll-behavior:smooth">  <head> <meta charset="utf-8"> <title>Contact-TajMahal</title> <meta name="viewport" content="width=device-width, initial-scale=1.0"> </head> <body> <div class="container"> <div class="text"> Contact us Form-TajMahal</div> <div><center>
 <a href="index.html">Home></a>&nbsp&nbsp Contact us</center>
 </div>
 
-<form action="mailto:netraballabhpandey@gmail.com" method="POST" enctype="multipart/form-data" name="EmailForm" id="my-form">
+<form action="" method="POST" enctype="multipart/form-data" name="EmailForm" id="my-form">
  <div class="form-row">
 <div class="form-group"> <input type="text" required id="firstName"> <div class="underline"></div> 
 <label for="">First Name</label> </div> 
-<style> 
-
-         
-
-        /* We are stoping user from 
-
-        printing our webpage */ 
-
-        @media print { 
-
- 
-
-            html, 
-
-            body { 
-
- 
-
-                /* Hide the whole page */ 
-
-                display: none; 
-
-            } 
-
-        } 
-
-    </style>
-
 
 <div class="form-group"> <input type="text" required id="lastName"> <div class="underline"></div>
  <label for="">Last Name</label> </div> </div> 
@@ -75,5 +48,91 @@ document.onclick=reEnable
 				
 				
 </style>
+<?php  
+
+ 
+
+if(isset($_POST['submit'])) {
+
+ $mailto = "netraballabhpandey@gmail.com";  //My email address
+
+ //getting customer data
+
+ $name = $_POST['name']; //getting customer name
+
+ $fromEmail = $_POST['email']; //getting customer email
+
+ $phone = $_POST['tel']; //getting customer Phome number
+
+ $subject = $_POST['subject']; //getting subject line from client
+
+ $subject2 = "Confirmation: Message was submitted successfully | HMA WebDesign"; // For customer confirmation
+
+ 
+
+ //Email body I will receive
+
+ $message = "Cleint Name: " . $name . "\n"
+
+ . "Phone Number: " . $phone . "\n\n"
+
+ . "Client Message: " . "\n" . $_POST['message'];
+
+ 
+
+ //Message for client confirmation
+
+ $message2 = "Dear" . $name . "\n"
+
+ . "Thank you for contacting us. We will get back to you shortly!" . "\n\n"
+
+ . "You submitted the following message: " . "\n" . $_POST['message'] . "\n\n"
+
+ . "Regards," . "\n" . "- HMA WebDesign";
+
+ 
+
+ //Email headers
+
+ $headers = "From: " . $fromEmail; // Client email, I will receive
+$headers2 = "From: " . $mailto; // This will receive client
+
+ 
+
+ //PHP mailer function
+
+ 
+
+  $result1 = mail($mailto, $subject, $message, $headers); // This email sent to My address
+
+  $result2 = mail($fromEmail, $subject2, $message2, $headers2); //This confirmation email to client
+
+ 
+
+  //Checking if Mails sent successfully
+
+ 
+
+  if ($result1 && $result2) {
+
+    $success = "Your Message was sent Successfully!";
+
+  } else {
+
+    $failed = "Sorry! Message was not sent, Try again Later.";
+
+  }
+
+ 
+
+}
+
+ 
+
+?>
+
+
+ 
+
 
 </body> </html>
