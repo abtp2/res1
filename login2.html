@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Open Sans";
+            color: #fff;
+        }
+        section{
+            background: url("nightview.jpg");
+            height: 120vh;
+            width: 100%;
+            background-size: cover;
+            background-position: center center;
+        }
+        .form-container{
+            position: absolute;
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 380px;
+            padding: 50px 30px;
+            border-radius: 10px;
+            box-shadow:8px 8px 60px #000;
+        }
+        h1{
+            color: #ffffff;
+            font-size:2px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .control input{
+            padding: 10px;
+            font-size: 16px;
+            display: block;
+            width: 100%;
+            color:#000;
+            background: #ddd;
+            outline: none;
+            border: none;
+            margin: 1em 0;
+
+        }         
+        .control .btn{
+            color: #fff;
+            text-transform: uppercase;
+            background: crimson;
+            opacity: 7;
+            transition:opacity .3s ease;
+        }
+        .btn:focus{
+            opacity: 1;
+        }
+        p{
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+            opacity: .7;
+        }
+        a:hover{
+            opacity: 2;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="form-container">
+            <h1 id="hello">Login Form</h1>
+        <form action="index.html">
+            <div class="control">
+            <label for="name">Name</label>
+            <input type="text" id="name" >
+            </div>
+            <div class="control">
+            <label for="psw">Password</label>
+            <input type="password" id="psw" >
+            </div>
+            <span><input type="checkbox"> Remember me</span>
+            <div class="control">
+            <input type="submit" class="btn" value="Login">
+            </div>
+        </form>
+        <p><a href="#">Forget password ?</a></p>
+        </div>
+    </section>
+    <style>
+#hello{
+width:0ch;
+overflow:hidden;
+white-space:nowrap;
+animation:text 5s infinite steps(40);
+	
+font-size:60px
+}
+
+@keyframes text{
+0%{
+width:0ch;				
+}
+50%{
+width:10ch
+}
+<!--100%
+{
+width:30ch
+} -->
+				
+				
+</style>
+</body>
+</html>
